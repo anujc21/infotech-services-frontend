@@ -1,0 +1,758 @@
+@font-face {
+    font-family: "Figtree";
+    src: url("assets/Figtree-Regular.woff2") format("woff2"),
+        url("assets/Figtree-Regular.woff") format("woff"),
+        url("assets/Figtree-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(250, 18, 57, 0.6) #ffe3e8;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe3e8;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(250, 18, 57, 0.6);
+    border-radius: 6px;
+    border: 2px solid #ffe3e8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(250, 18, 57, 0.8);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Figtree", Arial;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 0px 100px;
+}
+
+.topbarLogo {
+    margin-right: auto;
+    width: 230px;
+    height: 60px;
+}
+
+.topbarLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+    font-size: 16px;
+}
+
+.topbarLink {
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.topbarLink:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.topbarLink:active {
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.topbarButton {
+    margin-left: auto;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    background: #fa1239;
+    box-shadow: 0px 0px 8px rgba(250, 18, 57, 0.8);
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.topbarButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.topbarButton:active {
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.hero {
+    width: 100%;
+    background: url(assets/heroBackground.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 0 0 0;
+}
+
+.section1 {
+    flex: 1 1 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 700px;
+}
+
+.section1Box {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-right: 40px;
+}
+
+.section1Title {
+    width: 100%;
+    max-width: 650px;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 1.4;
+    color: #111;
+    text-align: left;
+}
+
+.section1Title .highlight {
+    color: #fa1239;
+    position: relative;
+    display: inline-block;
+}
+
+.section1Title .highlight .underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    height: auto;
+    pointer-events: none;
+    bottom: -10px;
+}
+
+.section1Text {
+    margin: 30px 0px 0px 0px;
+    width: 100%;
+    max-width: 490px;
+    font-size: 16px;
+    text-align: left;
+    line-height: 34px;
+    text-transform: capitalize;
+}
+
+.section1Buttons {
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.section1ResumeButton {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fa1239;
+    background: #fff;
+    border: 2px solid #fa1239;
+    box-shadow: 0px 0px 8px rgba(250, 18, 57, 0.8);
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.section1ContactButton {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    background: #fa1239;
+    box-shadow: 0px 0px 8px rgba(250, 18, 57, 0.8);
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.section1ResumeButton:hover,
+.section1ContactButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.section1ResumeButton:active,
+.section1ContactButton:active {
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.section2 {
+    flex: 1 1 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 320px;
+    max-width: 700px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.section2Image {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+}
+
+.section2Wrapper {
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+}
+
+.section2Image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section2Card {
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transition: transform 0.3s ease;
+}
+
+.section2Card:hover {
+    transform: scale(1.05);
+}
+
+.ratingCard {
+    padding: 15px 30px;
+    bottom: 20%;
+    left: -5%;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.resumeCard {
+    padding: 15px 30px;
+    bottom: 5%;
+    right: 5%;
+    gap: 20px;
+}
+
+.ratingTitle {
+    font-size: 64px;
+    font-weight: 600;
+    color: #1cb098;
+}
+
+.ratingBox {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ratingIcon {
+    width: auto;
+    height: auto;
+}
+
+.ratingText {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.resumeIcon {
+    width: auto;
+    height: auto;
+}
+
+.resumeBox {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.resumeTitle {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+.resumeText {
+    font-size: 17px;
+    color: #666666;
+}
+
+.menuIcon {
+    display: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contentHeading {
+    margin: 60px 0px 40px 0px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #ffe3e8;
+    border-radius: 10px;
+    user-select: none;
+    transition: transform 0.3s;
+}
+
+.contentHeading:hover {
+    transform: scale(1.05);
+}
+
+.contentTitle {
+    width: 70%;
+    margin: 0px 20px;
+    text-transform: capitalize;
+    font-size: 44px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.highlight {
+    color: #fa1239;
+}
+
+.contentCards {
+    margin: 40px 0px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 0 1 300px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.cardImage {
+    margin: 40px 0px;
+    width: 70%;
+    height: auto;
+}
+
+.cardBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cardTitle {
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 25px 10px 25px;
+    line-height: 1.6;
+}
+
+.cardText {
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+    font-size: 18px;
+    color: #595959;
+    padding: 10px 20px;
+    line-height: 1.6;
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 360px;
+    height: 100%;
+    background-color: #ffe3e8;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px 20px 20px 20px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+}
+
+.mobileMenu.open {
+    right: 0;
+}
+
+.menuHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuLogo {
+    width: 160px;
+    height: auto;
+}
+
+.closeIcon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    user-select: none;
+}
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 18px;
+    color: #111;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menuItem:hover {
+    transform: translateX(5px);
+}
+
+.menuItem.active {
+    color: #fa1239;
+}
+
+.menuIconItem {
+    width: 20px;
+    height: 20px;
+}
+
+.menuContactButton {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    background: #fa1239;
+    color: #fff;
+    border-radius: 30px;
+    padding: 14px 0;
+    font-size: 16px;
+    box-shadow: 0px 0px 8px rgba(250, 18, 57, 0.8);
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.menuContactButton:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.menuContactButton:active {
+    transform: scale(0.95);
+}
+
+body.menu-open::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    transition: opacity 0.3s ease;
+}
+
+@media (max-width: 1050px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 0 0 0;
+        gap: 0;
+    }
+
+    .section1 {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .section1Box {
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        margin-bottom: 0;
+    }
+
+    .section1Title {
+        text-align: center;
+        font-size: 48px;
+    }
+
+    .section1Text {
+        font-size: 15px;
+        line-height: 28px;
+        max-width: 600px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .section1Title .highlight .underline {
+        display: none;
+    }
+
+    .section1Buttons {
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+
+    .section1Buttons > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .section2 {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .section2Image {
+        margin-top: 8px;
+        max-width: 90%;
+    }
+
+    .contentTitle {
+        font-size: 38px;
+    }
+
+    .ratingCard {
+        padding: 15px 20px;
+        bottom: 20%;
+        left: 5%;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+    }
+
+    .resumeCard {
+        padding: 15px 20px;
+        bottom: 5%;
+        right: 15%;
+        gap: 10px;
+    }
+
+    .ratingTitle {
+        font-size: 22px;
+        font-weight: 600;
+        color: #1cb098;
+    }
+
+    .ratingBox {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .ratingIcon {
+        width: 80px;
+        height: auto;
+    }
+
+    .ratingText {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .resumeIcon {
+        width: 40px;
+        height: auto;
+    }
+
+    .resumeBox {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .resumeTitle {
+        font-size: 18px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .resumeText {
+        font-size: 11px;
+        color: #666666;
+    }
+}
+
+@media (max-width: 550px) {
+    .topbar {
+        height: 70px;
+    }
+
+    .topbarLogo {
+        margin-right: auto;
+        width: 170px;
+        height: 50px;
+    }
+
+    .section1Buttons {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 0;
+    }
+
+    .section1ResumeButton,
+    .section1ContactButton {
+        text-align: center;
+    }
+
+    .section1Title {
+        font-size: 34px;
+    }
+
+    .section2Image {
+        margin-top: 8px;
+        max-width: 100%;
+    }
+
+    .contentCards {
+        margin: 20px 0px;
+        gap: 30px;
+    }
+
+    .contentHeading {
+        margin: 60px 0px 30px 0px;
+    }
+
+    .contentTitle {
+        font-size: 30px;
+    }
+
+    .resumeCard {
+        right: 5%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .topbarLinks {
+        display: none;
+    }
+
+    .menuIcon {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .topbarButton {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .contentTitle {
+        width: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .topbarButton {
+        display: none;
+    }
+}
